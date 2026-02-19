@@ -10,7 +10,22 @@ The project focuses on strategic resource allocation: strengthening high-represe
 ## Tools 
 - MySQL Workbench
 - Excel
-- Power BI 
+- Power BI
+## Data Cleansing 
+The dataset was filtered using **SQL** to include only records related to Saudi Arabia from 2000 to 2024.
+The data was then structured into three relational tables:
+- Events
+- Athletes
+- Participant
+
+Then the data were exporting to **Excel** for further cleansing such as:  
+- standardize text cells and unify inconsistencies (such as spelling variations and formatting differences).
+- complete missing value using data sourced from the official Saudi Olympic & Paralympic Committee
+
+
+## Data model 
+<img width="1773" height="1091" alt="Screenshot 2026-02-19 212041" src="https://github.com/user-attachments/assets/1e18951a-6035-4026-8169-4518e3ac21b3" />
+
 ## Dax Measures examples 
 
 - **Athletes per age group** 
