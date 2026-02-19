@@ -75,7 +75,7 @@ CALCULATE(
     athletes[sex] = "M"
 )
 ```
-% of Multiple vs Single Particpants 
+- **% of Multiple vs Single Particpants** 
 ```
 Multiple Participants % = 
 VAR TotalParticipants = DISTINCTCOUNT(participants[athlete_url])
