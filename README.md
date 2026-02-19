@@ -7,8 +7,86 @@ The project focuses on strategic resource allocation: strengthening high-represe
 1- [120 years of Olympic history: athletes and results](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download) 
 
 2- [Participants in the Olympics & Paralympics](https://olympic.sa/team-saudi/participants/) 
-## Data cleansing 
-## Dax Measures 
+## Tools 
+- MySQL Workbench
+- Excel
+- Power BI 
+## Dax Measures examples 
+
+- **Athletes per age group** 
+```
+Age Group = 
+VAR Age = [Participation Age]
+RETURN
+SWITCH(
+    TRUE(),
+    Age <= 20, "≤20",
+    Age <= 25, "21-25",
+    Age <= 30, "26-30",
+    Age <= 35, "31-35",
+    Age <= 40, "36-40",
+    "41+")
+```
+- **Avarage best positions per Discipline**
+```
+ Best Position per Event = 
+CALCULATE (
+    MIN ( participants[pos] ),
+    FILTER (
+        participants,
+        NOT ISBLANK ( participants[pos] )
+    ))
+``` 
+```
+Avg Position by Discipline = 
+AVERAGEX (
+    VALUES ( participants[event_id] ),
+    [Best Position per Event]
+)
+```
+- **Male/Female first participaton age** 
+```
+Male first participation = 
+CALCULATE(
+    AVERAGEX(
+        SUMMARIZE(
+            participants,
+            participants[athlete_url],
+            "FirstYear", MIN(events[event_year])
+        ), CALCULATE(
+            MIN(participants[Participation Age])
+        )
+    ),
+    athletes[sex] = "M"
+)
+```
+% of Multiple vs Single Particpants 
+```
+Multiple Participants % = 
+VAR TotalParticipants = DISTINCTCOUNT(participants[athlete_url])
+VAR MultipleCount = 
+    COUNTROWS(
+        FILTER(
+            VALUES(participants[athlete_url]),
+            CALCULATE(DISTINCTCOUNT(participants[event_id])) > 1
+        )
+    )
+RETURN
+    DIVIDE(MultipleCount, TotalParticipants, 0)
+```
+```
+Single Participant % = 
+VAR TotalParticipants = DISTINCTCOUNT(participants[athlete_url])
+VAR SingleParticipantsCount = 
+    COUNTROWS(
+        FILTER(
+            VALUES(participants[athlete_url]),
+            CALCULATE(DISTINCTCOUNT(participants[event_id])) = 1
+        )
+    )
+RETURN
+    DIVIDE(SingleParticipantsCount, TotalParticipants, 0)
+```
 ## Dashboard Screenshot 
 <img width="2034" height="1025" alt="Screenshot 2026-02-19 101155" src="https://github.com/user-attachments/assets/0484c476-8ae2-4220-a040-aa1b07c7a2a5" />
 <img width="2035" height="1013" alt="Screenshot 2026-02-19 102707" src="https://github.com/user-attachments/assets/bb50d153-42e7-4417-8163-1918e579a9f4" />
