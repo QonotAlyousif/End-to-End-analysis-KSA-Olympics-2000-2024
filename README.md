@@ -1,5 +1,5 @@
 # Saudi Arabia Olympics Participation and Performance Analysis (2000-2024)
-Full stack data analysis project (End to End) of Saudi Arabia Olympics Participation and Performance Analysis for the period (2000-2024)
+Full stack data analysis project (End to End) of Saudi Arabia Olympics Participation and Performance for the period (2000-2024)
 
 ## Objective 
 The project focuses on strategic resource allocation: strengthening high-representation disciplines while investing in under-supported athletes and sports to ensure sustainable and balanced Olympic participation.
@@ -103,12 +103,12 @@ RETURN
     DIVIDE(SingleParticipantsCount, TotalParticipants, 0)
 ```
 ## Dashboard Screenshot 
-- Dashboard overview 
+- **Dashboard overview** 
 <img width="2034" height="1025" alt="Screenshot 2026-02-19 101155" src="https://github.com/user-attachments/assets/0484c476-8ae2-4220-a040-aa1b07c7a2a5" />
-- Year filtering example 
+- **Year filtering example** 
 <img width="2035" height="1013" alt="Screenshot 2026-02-19 102707" src="https://github.com/user-attachments/assets/bb50d153-42e7-4417-8163-1918e579a9f4" />
 
-- Drill through example 
+- **Drill through example** 
 <img width="2061" height="986" alt="Screenshot 2026-02-19 101710" src="https://github.com/user-attachments/assets/84c06aa6-de91-4022-a245-2407c7904eed" />
 
 ## Insgihts 
