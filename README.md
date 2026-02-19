@@ -4,9 +4,10 @@ Full stack data analysis project (End to End) of Saudi Arabia Olympics Participa
 ## Objective 
 The project focuses on strategic resource allocation: strengthening high-representation disciplines while investing in under-supported athletes and sports to ensure sustainable and balanced Olympic participation.
 ## Dataset 
-1- [120 years of Olympic history: athletes and results](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download) 
+1- [Olympic Summer & Winter Games, 1896-2022]([https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download](https://www.kaggle.com/datasets/piterfm/olympic-games-medals-19862018)) 
 
 2- [Participants in the Olympics & Paralympics](https://olympic.sa/team-saudi/participants/) 
+3- [Olympedia(KSA) Overview](https://www.olympedia.org/countries/KSA) 
 ## Tools 
 - MySQL Workbench
 - Excel
